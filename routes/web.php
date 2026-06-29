@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\EmployeeControler;
+use App\Http\Controllers\EmployeeFiltersController;
+use App\Http\Controllers\QueryBuilderDemoController;
 use App\Http\Controllers\ValidationsDemoController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +23,7 @@ Route::post('employee',[EmployeeControler::class,'store'])->name('employees.stor
 
 Route::get('/validationsdemo',[ValidationsDemoController::class,'create'])->name('validationsdemo.create');
 Route::post('/validationsdemo',[ValidationsDemoController::class,'store'])->name('validationsdemo.store');
+
+Route::get('/employeefilters',[EmployeeFiltersController::class,'index'])->name('employeefilter.index');
+Route::get('/employeequreryfilters',[EmployeeFiltersController::class,'queryfilter'])->name('employeefilters.queryfilter');
+Route::get('/employeeQueryBilder',[QueryBuilderDemoController::class,'index'])->name('employeeQB.index');
