@@ -19,6 +19,18 @@ class TemporaryEmployee extends Model
         static::created(function ($employee) use ($listener){
             $listener->handleCreated($employee);
         });
+        static::deleting(function ($employee) use ($listener){
+            $listener->handleDeleting($employee);
+        });
+        static::deleted(function ($employee) use ($listener){
+            $listener->handleCreated($employee);
+        });
+        static::updating(function ($employee) use ($listener){
+            $listener->handleUpdating($employee);
+        });
+        static::updated(function ($employee) use ($listener){
+            $listener->handleUpdated($employee);
+        });
     }
 }
 
