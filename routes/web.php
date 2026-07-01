@@ -27,3 +27,5 @@ Route::post('/validationsdemo',[ValidationsDemoController::class,'store'])->name
 Route::get('/employeefilters',[EmployeeFiltersController::class,'index'])->name('employeefilter.index');
 Route::get('/employeequreryfilters',[EmployeeFiltersController::class,'queryfilter'])->name('employeefilters.queryfilter');
 Route::get('/employeeQueryBilder',[QueryBuilderDemoController::class,'index'])->name('employeeQB.index');
+
+Route::get('/pagewiseemployees',[EmployeeControler::class,'pageWiseEmployee'])->name('employees.pagewiseemployees');

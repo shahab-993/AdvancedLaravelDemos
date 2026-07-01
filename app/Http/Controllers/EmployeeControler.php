@@ -45,4 +45,15 @@ class EmployeeControler extends Controller
             return redirect()->route('employees.index')->with('success','Employee created successfully');
 
       }
+
+      public  function pageWiseEmployee(Request $request){
+        $paginationOptions= [5, 10, 15, 20 ,25 , 30, 35, 40, 45, 50];
+        $perPage=$request->get('perPage',5);
+
+        // $employees =Employee::with(['department','country'])->paginate(12 );
+        $employees =Employee::with(['department','country'])->paginate($perPage);
+        return view('employees.pagewiseemployees', compact('employees','paginationOptions'));
+
+      } 
+
 }
