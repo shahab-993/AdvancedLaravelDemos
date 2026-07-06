@@ -3,6 +3,14 @@
 
 <div class="container mt-5">
     <table class="table table-striped">
+        <!-- Seach box  -->
+         <div class="">
+            <input type="text" id="search" class="form-control" placeholder="Search Employee...">
+            <button class="btn btn-primary" onclick="searchEmployees()">Search</button>
+            <div id="searchResultsCount" class="mb-3" style="display:none;"></div>
+         </div> 
+         
+
         <div class="me-3">
             <label for="recordsPerPage" class="form-label"> Records per page: </label>
             <select name="recordsPerPage" id="recordsPerPage" class="form-select" 
@@ -47,8 +55,14 @@
 
         </tbody>
     </table>
-    <div class="d-flex justify-content-center">
+{{-- <div class="d-flex justify-content-center">
         {{ $employees->links() }}
+
+    </div> --}}
+    <div  id="pagination-wrapper" class="">
+        <div class="pagination-container">
+            {{ $employees->links() }}
+        </div>
     </div>
     
 

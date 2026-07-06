@@ -30,6 +30,39 @@
           @yield('content')
          </div>
     </div>
+    <script>
+        function searchEmployees(page = 1) {
+            let query = $('#search').val();
+            let perPage = $('#recordsPerPage').val();
+
+            $.ajax({
+                url: "{{ route('employees.search') }}?page=" + page,
+                //url: "{{ route('employees.search') }}", 
+                method: "POST",
+                data: {
+                    search: query,
+                    perPage: perPage,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    $('#employeeTable').html(response.html);
+                    $('#searchResultsCount').html(response.countMessage).show();
+                    $('.pagination-container').html(response.pagination);
+                },
+                error: function(xhr) {
+                    console.error('Search failed', xhr.responseJSON);
+                }
+            });
+        }
+
+        // Delegate click event for pagination links
+        $(document).on('click', '.pagination a', function(e) {
+            e.preventDefault();
+            alert($(this).attr('href').split('page=')[1]);
+            let page = $(this).attr('href').split('page=')[1];
+            searchEmployees(page);
+        });
+    </script>
     
 </body>
 </html>

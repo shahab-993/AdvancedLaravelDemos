@@ -55,5 +55,28 @@ class EmployeeControler extends Controller
         return view('employees.pagewiseemployees', compact('employees','paginationOptions'));
 
       } 
+      public function search(Request $request){ 
+        $paginationOptions= [5, 10, 15, 20 ,25 , 30, 35, 40, 45, 50];
+        $searchTerm=$request->get('search');
+        $perPage=$request->get('perPage',5);
+        $employees=Employee::with('department','country')
+        ->where('first_name', 'like','%'.$searchTerm.'%')
+        ->orWhere('last_name','like','%'.$searchTerm.'%')
+        ->orWhere('title_name','like','%'. $searchTerm. '%')
+        ->orWhere('email','like','%'.$searchTerm.'%')
+        ->orWhereHas('department',function ($query) use ($searchTerm){
+          $query->where('name','like','%'.$searchTerm.'%') ;
+          })
+        ->orWhereHas('country',function ($query) use ($searchTerm){
+          $query->where('name','like','%'.$searchTerm.'%');
+        })->paginate($perPage);
+        $html =view('employees.search-view',compact('employees'))->render();
+        $countMessage ="Found". $employees->total()."result(s)";
+        $pagination = $employees->appends(['perPage'=>$perPage, 'search'=>$searchTerm])->links('pagination::bootstrap-5');
+        return response()->json(['html'=>$html,'pagination'=>$pagination, 'countMessage'=>$countMessage]);
+
+
+        
+      }
 
 }

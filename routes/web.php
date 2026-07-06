@@ -29,3 +29,5 @@ Route::get('/employeequreryfilters',[EmployeeFiltersController::class,'queryfilt
 Route::get('/employeeQueryBilder',[QueryBuilderDemoController::class,'index'])->name('employeeQB.index');
 
 Route::get('/pagewiseemployees',[EmployeeControler::class,'pageWiseEmployee'])->name('employees.pagewiseemployees');
+
+Route::post('/search',[EmployeeControler::class,'search'])->name('employees.search');
