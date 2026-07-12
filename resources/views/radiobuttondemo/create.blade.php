@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<script src="{{ asset('js/radiobutton/script.js') }}"></script>
    <div class="container mt-5">
       <div class="d-flex justify-content-between align-items-center mb-4"></div>
       <h1>Working with Radio Button </h1>
@@ -12,7 +13,7 @@
       </div>
       <div class="form-group mb-3">
          <label for="first_name">Salary</label>
-         <input type="text" name="salary" id="salary" class="form-control" required>
+         <input type="text" name="salary" id="Salary" class="form-control" required>
       </div>
       <div class="form-group mb-3">
          <label for="">Allowance Type</label><br>
