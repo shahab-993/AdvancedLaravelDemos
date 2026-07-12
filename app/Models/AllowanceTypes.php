@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class AllowanceTypes extends Model
 {
-    protected $fillable = ['AllowanceTypeName', 'AllowncePercetage'];
+    protected $fillable = ['AllowanceTypeName', 'AllowncePercentage'];
 
 }
