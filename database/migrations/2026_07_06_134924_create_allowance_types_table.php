@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('allowance_types', function (Blueprint $table) {
             $table->id();
-                  $table->string('AllowanceTypeName')->nullable();
+            $table->string('AllowanceTypeName')->nullable();
             $table->decimal('AllowancePercentage',5,2)->nullable();
             $table->timestamps();
         });

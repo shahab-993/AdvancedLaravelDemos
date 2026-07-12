@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployeeControler;
 use App\Http\Controllers\EmployeeFiltersController;
 use App\Http\Controllers\QueryBuilderDemoController;
+use App\Http\Controllers\RadioButtonDemoController;
 use App\Http\Controllers\ValidationsDemoController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,7 @@ Route::get('/employeeQueryBilder',[QueryBuilderDemoController::class,'index'])->
 Route::get('/pagewiseemployees',[EmployeeControler::class,'pageWiseEmployee'])->name('employees.pagewiseemployees');
 
 Route::post('/search',[EmployeeControler::class,'search'])->name('employees.search');
+
+
+Route::get('/workwithradiobuttons',[RadioButtonDemoController::class, 'create'])->name('workwithradiobuttons.create');
+Route::post('/workwithradiobuttons ',[RadioButtonDemoController::class, 'store'])->name('workwithradiobuttons.store');
