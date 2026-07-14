@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,10 +12,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('allowance_types', function (Blueprint $table) {
+        Schema::create('employees_allowances', function (Blueprint $table) {
             $table->id();
-            $table->string('AllowanceTypeName')->nullable();
-            $table->decimal('AllowancePercentage',5,2)->nullable();
+
+            $table->foreignId('employee_id')->constrained('part_time_employees');
+            $table->foreignId('allowance_type_id')->constrained('allowance_types');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('allowance_types');
+        Schema::dropIfExists('employees_allowances');
     }
 };

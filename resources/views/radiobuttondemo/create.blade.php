@@ -13,7 +13,7 @@
       </div>
       <div class="form-group mb-3">
          <label for="first_name">Salary</label>
-         <input type="text" name="salary" id="Salary" class="form-control" required>
+         <input type="text" name="Salary" id="Salary" class="form-control" required>
       </div>
       <div class="form-group mb-3">
          <label for="">Allowance Type</label><br>
