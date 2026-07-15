@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckBoxDemoController;
 use App\Http\Controllers\EmployeeControler;
 use App\Http\Controllers\EmployeeFiltersController;
 use App\Http\Controllers\QueryBuilderDemoController;
@@ -36,3 +37,6 @@ Route::post('/search',[EmployeeControler::class,'search'])->name('employees.sear
 
 Route::get('/workwithradiobuttons',[RadioButtonDemoController::class, 'create'])->name('workwithradiobuttons.create');
 Route::post('/workwithradiobuttons ',[RadioButtonDemoController::class, 'store'])->name('workwithradiobuttons.store');
+
+Route::get('/workwithcheckboxs ',[CheckBoxDemoController::class, 'create'])->name('workwithcheckboxs.create');
+Route::post('/workwithcheckboxs',[CheckBoxDemoController::class, 'store'])->name('workwithcheckboxs.store');
