@@ -3,6 +3,7 @@
 use App\Http\Controllers\CheckBoxDemoController;
 use App\Http\Controllers\EmployeeControler;
 use App\Http\Controllers\EmployeeFiltersController;
+use App\Http\Controllers\ListBoxDemoController;
 use App\Http\Controllers\QueryBuilderDemoController;
 use App\Http\Controllers\RadioButtonDemoController;
 use App\Http\Controllers\ValidationsDemoController;
@@ -38,5 +39,8 @@ Route::post('/search',[EmployeeControler::class,'search'])->name('employees.sear
 Route::get('/workwithradiobuttons',[RadioButtonDemoController::class, 'create'])->name('workwithradiobuttons.create');
 Route::post('/workwithradiobuttons ',[RadioButtonDemoController::class, 'store'])->name('workwithradiobuttons.store');
 
-Route::get('/workwithcheckboxs ',[CheckBoxDemoController::class, 'create'])->name('workwithcheckboxs.create');
+Route::get('/workwithcheckboxs',[CheckBoxDemoController::class, 'create'])->name('workwithcheckboxs.create');
 Route::post('/workwithcheckboxs',[CheckBoxDemoController::class, 'store'])->name('workwithcheckboxs.store');
+
+Route::get('/listboxdemo',[ListBoxDemoController::class, 'create'])->name('listboxdemo.create');
+Route::post('/listboxdemo',[ListBoxDemoController::class, 'store'])->name('listboxdemo.store');
