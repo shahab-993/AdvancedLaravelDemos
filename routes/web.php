@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CascadingDropDownListsDemoController;
 use App\Http\Controllers\CheckBoxDemoController;
 use App\Http\Controllers\EmployeeControler;
 use App\Http\Controllers\EmployeeFiltersController;
@@ -44,3 +45,11 @@ Route::post('/workwithcheckboxs',[CheckBoxDemoController::class, 'store'])->name
 
 Route::get('/listboxdemo',[ListBoxDemoController::class, 'create'])->name('listboxdemo.create');
 Route::post('/listboxdemo',[ListBoxDemoController::class, 'store'])->name('listboxdemo.store');
+
+Route::get('/cascadingdropdowndemo',[CascadingDropDownListsDemoController::class, 'getCountries'])->name('cascadingdropdowndemo');
+
+
+Route::get('/get-states/{country_id}',[CascadingDropDownListsDemoController::class, 'getState'])->name('get-states');
+
+
+Route::get('/get-cities/{state_id}',[CascadingDropDownListsDemoController::class, 'getCities'])->name('get-cities');
