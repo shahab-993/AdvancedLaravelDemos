@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CascadingDropDownListsDemoController;
 use App\Http\Controllers\CheckBoxDemoController;
+use App\Http\Controllers\DeletSingleRowUsingRadioButtonController;
 use App\Http\Controllers\EmployeeControler;
 use App\Http\Controllers\EmployeeFiltersController;
 use App\Http\Controllers\ListBoxDemoController;
@@ -53,3 +54,7 @@ Route::get('/get-states/{country_id}',[CascadingDropDownListsDemoController::cla
 
 
 Route::get('/get-cities/{state_id}',[CascadingDropDownListsDemoController::class, 'getCities'])->name('get-cities');
+
+
+Route::get('/single-delete',[DeletSingleRowUsingRadioButtonController::class, 'index'])->name('singleDelete');
+Route::delete('/employee-delete',[DeletSingleRowUsingRadioButtonController::class, 'destroy'])->name('employees.delete');
