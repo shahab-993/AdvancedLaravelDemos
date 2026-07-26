@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BulkInsertEmployeesController;
 use App\Http\Controllers\CascadingDropDownListsDemoController;
 use App\Http\Controllers\CheckBoxDemoController;
 use App\Http\Controllers\DeleteBulkRowsUsingCheckBoxController;
@@ -64,4 +65,6 @@ Route::get('/bulk-delete', [DeleteBulkRowsUsingCheckBoxController::class, 'index
 Route::delete('/employees/bulk-delete', [DeleteBulkRowsUsingCheckBoxController::class, 'destroy'])->name('employees.bulkDelete');
 
 
-
+Route::get('/bulkinserts', [BulkInsertEmployeesController::class, 'create'])->name('bulkinserts.create');
+Route::post('/bulkinserts', [BulkInsertEmployeesController::class, 'store'])->name('bulkinserts.store');
+ 
