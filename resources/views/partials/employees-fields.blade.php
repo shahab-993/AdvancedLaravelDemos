@@ -8,17 +8,17 @@
                 <input type="text" name="employees[][last_name]" placeholder="Enter First Name " class="form-control">
             </td>
             <td>
-                <input type="text" name="employees[][has_passport]" value="1">Has Passport
+                <input type="checkbox" name="employees[][has_passport]" value="1">Has Passport
             </td>
             <td>
                 <label for="">
-                    <input type="radio" name="employees[][title_name]">Mr
+                    <input type="radio" name="employees[][title_name]" value="Mr">Mr
                 </label>
                 <label for="">
-                    <input type="radio" name="employees[][title_name]">Ms
+                    <input type="radio" name="employees[][title_name]" value="Ms">Ms
                 </label>
                 <label for="">
-                    <input type="radio" name="employees[][title_name]">Mrs
+                    <input type="radio" name="employees[][title_name]" value="Mrs">Mrs
                 </label>
             </td>
             <td>
@@ -36,8 +36,8 @@
 
             </td>
             <td>
-                <select name="employees[][depatment_id]" id="" class="form-control">
-                    <option value="">Select Depatment</option>
+                <select name="employees[][department_id]" id="" class="form-control">
+                    <option value="">Select Department</option>
                     @foreach ($departments as $department )
                     <option value="{{ $department->id }}">{{ $department->name }}</option>
                         
@@ -45,9 +45,9 @@
                 </select>
             </td>
             <td>
-                <select name="employees[][depatment_id]" id="" class="form-control">
+                <select name="employees[][country_id]" id="" class="form-control">
                     <option value="">Select Country</option>
-                    @foreach ($countries as $coutrn )
+                    @foreach ($countries as $country )
                     <option value="{{ $country->id }}">{{ $country->name }}</option>
                         
                     @endforeach
