@@ -7,6 +7,7 @@ use App\Http\Controllers\CheckBoxDemoController;
 use App\Http\Controllers\DeleteBulkRowsUsingCheckBoxController;
 use App\Http\Controllers\DeletSingleRowUsingRadioButtonController;
 use App\Http\Controllers\EmployeeControler;
+use App\Http\Controllers\EmployeeExportController;
 use App\Http\Controllers\EmployeeFiltersController;
 use App\Http\Controllers\ListBoxDemoController;
 use App\Http\Controllers\QueryBuilderDemoController;
@@ -71,3 +72,6 @@ Route::post('/bulkinserts', [BulkInsertEmployeesController::class, 'store'])->na
  
 Route::get('bulkupdate',[BulkUpdateEmployeesController::class, 'index'])->name('bulkupdates.index');
 Route::post('bulkupdate',[BulkUpdateEmployeesController::class, 'update'])->name('bulkupdates.update');
+
+
+Route::get('employees/export/index',[EmployeeExportController::class,'index'])->name('employees.export.index');

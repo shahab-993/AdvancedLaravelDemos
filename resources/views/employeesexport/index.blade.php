@@ -1,0 +1,32 @@
+@extends('layouts.app')
+@section('content')
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Title</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable">
+            @foreach ($employees as $employee )
+            <tr>
+                <td>{{ $employee->first_name }}</td>
+                <td>{{ $employee->last_name }}</td>
+                <td>{{ $employee->title_name }}</td>
+                <td>{{ $employee->email }}</td>
+                <td>{{ $employee->departmen ? $employee->department->name: 'N/A' }}</td>
+                <td>{{ $employee->country ? $employee->country->name: 'N/A' }}</td>
+            </tr>
+                
+            @endforeach
+
+        </tbody>
+    </table>
+</div>
+    
+@endsection
