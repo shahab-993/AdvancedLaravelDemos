@@ -27,6 +27,8 @@
 
         </tbody>
     </table>
+        <a href="{{ route('employees.export.pdf') }}" class="btn btn-danger"> Export PDF</a>
+
 </div>
     
 @endsection

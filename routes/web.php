@@ -75,3 +75,4 @@ Route::post('bulkupdate',[BulkUpdateEmployeesController::class, 'update'])->name
 
 
 Route::get('employees/export/index',[EmployeeExportController::class,'index'])->name('employees.export.index');
+Route::get('employees/export/pdf',[EmployeeExportController::class,'exportPdf'])->name('employees.export.pdf');
