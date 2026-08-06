@@ -79,3 +79,4 @@ Route::get('employees/export/pdf',[EmployeeExportController::class,'exportPdf'])
 Route::get('employees/export/excel',[EmployeeExportController::class,'exportExcel'])->name('employees.export.excel');
 Route::get('employees/export/csy',[EmployeeExportController::class,'exportCsv'])->name('employees.export.csv');
 Route::get('employees/export/txt',[EmployeeExportController::class,'exportTxt'])->name('employees.export.txt');
+Route::get('employees/export/wrod',[EmployeeExportController::class,'exportWord'])->name('employees.export.word');

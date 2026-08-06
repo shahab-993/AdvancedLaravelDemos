@@ -31,6 +31,7 @@
         <a href="{{ route('employees.export.excel') }}" class="btn btn-success"> Export Excel</a>
         <a href="{{ route('employees.export.csv') }}" class="btn btn-primary"> Export Csy</a>
         <a href="{{ route('employees.export.txt') }}" class="btn btn-primary"> Export Text</a>
+        <a href="{{ route('employees.export.word') }}" class="btn btn-primary"> Export Word</a>
 
 </div>
     

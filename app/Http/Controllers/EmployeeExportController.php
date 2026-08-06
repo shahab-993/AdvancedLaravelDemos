@@ -7,6 +7,10 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
+use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\IOFactory;
+use PhpOffice\PhpOffice\PhpWord\Writer\Word2007;
+
 
 
 class EmployeeExportController extends Controller
@@ -59,4 +63,47 @@ class EmployeeExportController extends Controller
          return Storage::download($fileName);
 
    }
+   public function exportWord(){
+      $employees=Employee::with(['department', 'country'])->get();
+      $phpWord= new PhpWord();
+      $section =$phpWord->addSection();
+
+      $tableStyle = [
+         'borderSize'=> 6,
+         'borderColor' =>'999999',
+         'cellMargin' => 80,
+      ];
+      $phpWord->addTableStyle('Employee Table',$tableStyle);
+      $table = $section->addTable('Employee Table');
+      $table->addRow();
+      $table->addCell(2000)->addText('First Name');
+      $table->addCell(2000)->addText('Last Name');
+      $table->addCell(2000)->addText('Title Name');
+      $table->addCell(2000)->addText('Email');
+      $table->addCell(2000)->addText('Department');
+      $table->addCell(2000)->addText('Country');
+      $table->addCell(2000)->addText('Notes'); 
+
+
+      foreach($employees as $employee){
+       $table->addRow();
+      $table->addCell(2000)->addText($employee->first_name);
+      $table->addCell(2000)->addText($employee->last_name);
+      $table->addCell(2000)->addText($employee->title_name);
+      $table->addCell(2000)->addText($employee->email);
+      $table->addCell(2000)->addText($employee->department->name ?? 'N/A');
+      $table->addCell(2000)->addText($employee->country->name ?? 'N/A');
+      $table->addCell(2000)->addText($employee->notes);
+
+
+   }
+    $fileName= 'employees.docx';
+    $tempFilePath =storage_path('app/'.$fileName);
+     
+    $writer = IOFactory::createWriter($phpWord,'Word2007');
+    $writer->save($tempFilePath);
+
+    return response()->download($tempFilePath)->deleteFileAfterSend(true);
+   }
+ 
  }
