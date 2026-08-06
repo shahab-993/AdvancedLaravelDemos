@@ -77,3 +77,5 @@ Route::post('bulkupdate',[BulkUpdateEmployeesController::class, 'update'])->name
 Route::get('employees/export/index',[EmployeeExportController::class,'index'])->name('employees.export.index');
 Route::get('employees/export/pdf',[EmployeeExportController::class,'exportPdf'])->name('employees.export.pdf');
 Route::get('employees/export/excel',[EmployeeExportController::class,'exportExcel'])->name('employees.export.excel');
+Route::get('employees/export/csy',[EmployeeExportController::class,'exportCsv'])->name('employees.export.csv');
+Route::get('employees/export/txt',[EmployeeExportController::class,'exportTxt'])->name('employees.export.txt');
