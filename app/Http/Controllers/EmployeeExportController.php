@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Barryvdh\DomPDF\Facade\Pdf;
-
+use App\Exports\EmployeesExport;
 use App\Models\Employee;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class EmployeeExportController extends Controller
@@ -18,5 +19,8 @@ class EmployeeExportController extends Controller
       $employees= Employee::all();
       $pdf = PDF::loadView('employeesexport.export_pdf',compact('employees'));
       return $pdf->download('employees.pdf');
+   }
+   public function exportExcel(){
+      return Excel::download(new EmployeesExport, 'employees.xlsx');
    }
 }
