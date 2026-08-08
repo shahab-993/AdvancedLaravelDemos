@@ -84,3 +84,5 @@ Route::get('employees/export/wrod',[EmployeeExportController::class,'exportWord'
 
 
 Route::get('/temporary-employees',[TemporaryEmployeeController::class,'index'])->name('temporary-employee.index');
+Route::get('/temporary-employees/create',[TemporaryEmployeeController::class,'create'])->name('temporary-employee.create');
+Route::post ('/temporary-employees',[TemporaryEmployeeController::class,'store'])->name('temporary-employee.store');

@@ -3,6 +3,8 @@
 @section('content')
 <div class="container mt-4">
     <h1 class="mb-4">Uplode and Download File Demo</h1>
+    <!-- Create Employee Button  -->
+     <a href="{{ route('temporary-employee.create') }}" class="btn btn-primary mb-3">Create Employee</a>
     <div class="table table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead class="table-dark">
