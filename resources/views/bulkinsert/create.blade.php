@@ -7,6 +7,7 @@
     <div id="employee-container">
 
     </div>
+    
 
     <template id="employee-template">
         <div class="">
@@ -15,12 +16,13 @@
             'countries'=>$countries,
             ])
         </div>
+        
     </template>
-
 
     <button type="button" class="btn btn-success" onclick="addEmployee()">Add Row</button><br><br>
     <button type="submit" class="btn btn-primary">Bulk Insert Employees</button>
 </form>
+ 
 
 <script>
     let employeeIndex = 0;

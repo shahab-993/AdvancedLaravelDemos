@@ -30,10 +30,12 @@
                 
             @endforeach
         </tbody>
+        
 
     </Table>
     <button type="submit" class="btn btn-danger">Delete Selected Employee</button>
     </form>
+ 
 
 </div>
     

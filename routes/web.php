@@ -12,6 +12,7 @@ use App\Http\Controllers\EmployeeFiltersController;
 use App\Http\Controllers\ListBoxDemoController;
 use App\Http\Controllers\QueryBuilderDemoController;
 use App\Http\Controllers\RadioButtonDemoController;
+use App\Http\Controllers\TemporaryEmployeeController;
 use App\Http\Controllers\ValidationsDemoController;
 use Illuminate\Support\Facades\Route;
 
@@ -80,3 +81,6 @@ Route::get('employees/export/excel',[EmployeeExportController::class,'exportExce
 Route::get('employees/export/csy',[EmployeeExportController::class,'exportCsv'])->name('employees.export.csv');
 Route::get('employees/export/txt',[EmployeeExportController::class,'exportTxt'])->name('employees.export.txt');
 Route::get('employees/export/wrod',[EmployeeExportController::class,'exportWord'])->name('employees.export.word');
+
+
+Route::get('/temporary-employees',[TemporaryEmployeeController::class,'index'])->name('temporary-employee.index');
