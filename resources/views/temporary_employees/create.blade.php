@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <h1 class="mb-4">Create Temporary Employee</h1>
 
-        <form action="{{ route('temporary-employee.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('temporary-employees.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <!-- First Name -->
