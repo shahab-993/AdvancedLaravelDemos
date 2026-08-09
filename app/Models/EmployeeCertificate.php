@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EmployeeCertificate extends Model
 {
-     protected $fillables = [   
-        'temp_em_id','certificate_name'
+     protected $fillable = [   
+        'temp_emp_id','certificate_name'
      ];
 
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TempEmployee extends Model
 {
-    protected $fillables = [    
+    protected $fillable = [    
         "first_name","last_name","cv","photo","pen_card"
     ];
 

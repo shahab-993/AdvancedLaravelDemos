@@ -7,6 +7,7 @@
      <a href="{{ route('temporary-employee.create') }}" class="btn btn-primary mb-3">Create Employee</a>
     <div class="table table-responsive">
         <table class="table table-striped table-bordered table-hover">
+
             <thead class="table-dark">
 
                 <tr>
@@ -18,10 +19,11 @@
             </thead>
             <tbody>
                 @foreach ($employees as $employee )
-                    {{ $employee->id }}
-                    {{ $employee->first_name }}
-                    {{ $employee->last_name }}
-                    
+                <tr>
+                  <td> {{ $employee->id }}</td> 
+                  <td> {{ $employee->first_name }}</td> 
+                  <td> {{ $employee->last_name }}</td> 
+                    </tr>
                 @endforeach
             </tbody>
         </table>
