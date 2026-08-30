@@ -4,6 +4,7 @@ use App\Http\Controllers\BulkInsertEmployeesController;
 use App\Http\Controllers\BulkUpdateEmployeesController;
 use App\Http\Controllers\CascadingDropDownListsDemoController;
 use App\Http\Controllers\CheckBoxDemoController;
+use App\Http\Controllers\CookiesDemoController;
 use App\Http\Controllers\DeleteBulkRowsUsingCheckBoxController;
 use App\Http\Controllers\DeletSingleRowUsingRadioButtonController;
 use App\Http\Controllers\EmployeeControler;
@@ -91,3 +92,6 @@ Route::get ('/temporary-employees/{id}',[TemporaryEmployeeController::class,'sho
 
 Route::get('sessionsdemo',[SessionsDemoController::class,'index'])->name('sessionsdemo.index');
 Route::get('readSessiondata',[SessionsDemoController::class,'readsessiondata'])->name('sessionsdemo.readsessiondata');
+
+Route::get('cookiesdemo',[CookiesDemoController::class,'index'])->name('cookiesdemo.index');
+Route::get('readcookiesdata',[CookiesDemoController::class,'readcookiesdata'])->name('cookiesdemo.readcookiesdata');
