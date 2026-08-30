@@ -12,6 +12,7 @@ use App\Http\Controllers\EmployeeFiltersController;
 use App\Http\Controllers\ListBoxDemoController;
 use App\Http\Controllers\QueryBuilderDemoController;
 use App\Http\Controllers\RadioButtonDemoController;
+use App\Http\Controllers\SessionsDemoController;
 use App\Http\Controllers\TemporaryEmployeeController;
 use App\Http\Controllers\ValidationsDemoController;
 use Illuminate\Support\Facades\Route;
@@ -87,3 +88,6 @@ Route::get('/temporary-employees',[TemporaryEmployeeController::class,'index'])-
 Route::get('/temporary-employees/create',[TemporaryEmployeeController::class,'create'])->name('temporary-employees.create');
 Route::post ('/temporary-employees',[TemporaryEmployeeController::class,'store'])->name('temporary-employees.store');
 Route::get ('/temporary-employees/{id}',[TemporaryEmployeeController::class,'show'])->name('temporary-employees.show');
+
+Route::get('sessionsdemo',[SessionsDemoController::class,'index'])->name('sessionsdemo.index');
+Route::get('readSessiondata',[SessionsDemoController::class,'readsessiondata'])->name('sessionsdemo.readsessiondata');
