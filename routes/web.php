@@ -1,28 +1,30 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\CacheDemoController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RolesController;
-use App\Http\Controllers\CookiesDemoController;
-use App\Http\Controllers\ListBoxDemoController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\BulkInsertEmployeesController;
+use App\Http\Controllers\BulkUpdateEmployeesController;
+use App\Http\Controllers\CacheDemoController;
+use App\Http\Controllers\CascadingDropDownListsDemoController;
 use App\Http\Controllers\CheckBoxDemoController;
-use App\Http\Controllers\SessionsDemoController;
+use App\Http\Controllers\CookiesDemoController;
+use App\Http\Controllers\DeleteBulkRowsUsingCheckBoxController;
+use App\Http\Controllers\DeleteSingleRowUsingRadioButtonController;
+use App\Http\Controllers\DeletSingleRowUsingRadioButtonController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmployeeDIDemoController;
 use App\Http\Controllers\EmployeeExportController;
 use App\Http\Controllers\EmployeeFiltersController;
-use App\Http\Controllers\ValidationsDemoController;
-use App\Http\Controllers\QueryBuilderDemoController;
-use App\Http\Controllers\RadioButtonsDemoController;
-use App\Http\Controllers\TemporaryEmployeeController;
-use App\Http\Controllers\BulkInsertEmployeesController;
-use App\Http\Controllers\BulkUpdateEmployeesController;
 use App\Http\Controllers\EmployeeWithPermissionController;
-use App\Http\Controllers\CascadingDropDownListsDemoController;
-use App\Http\Controllers\DeleteBulkRowsUsingCheckBoxController;
-use App\Http\Controllers\DeleteSingleRowUsingRadioButtonController;
+use App\Http\Controllers\ListBoxDemoController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QueryBuilderDemoController;
+use App\Http\Controllers\RadioButtonDemoController;
+use App\Http\Controllers\RadioButtonsDemoController;
+use App\Http\Controllers\SessionsDemoController;
+use App\Http\Controllers\TemporaryEmployeeController;
+use App\Http\Controllers\ValidationsDemoController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -53,8 +55,8 @@ Route::get('/pagewiseemployees', [EmployeeController::class, 'pageWiseEmployees'
 
 Route::post('/search', [EmployeeController::class, 'search'])->name('employees.search'); 
 
-Route::get('/workwithradiobuttons', [RadioButtonsDemoController::class, 'create'])->name('workwithradiobuttons.create');
-Route::post('/workwithradiobuttons', [RadioButtonsDemoController::class, 'store'])->name('workwithradiobuttons.store');
+Route::get('/workwithradiobuttons', [RadioButtonDemoController::class, 'create'])->name('workwithradiobuttons.create');
+Route::post('/workwithradiobuttons', [RadioButtonDemoController::class, 'store'])->name('workwithradiobuttons.store');
 
 Route::get('/workwithcheckboxes', [CheckBoxDemoController::class, 'create'])->name('workwithcheckboxes.create');
 Route::post('/workwithcheckboxes', [CheckBoxDemoController::class, 'store'])->name('workwithcheckboxes.store');
@@ -66,8 +68,8 @@ Route::get('/cascadingdropdowndemo', [CascadingDropDownListsDemoController::clas
 Route::get('/get-states/{country_id}', [CascadingDropDownListsDemoController::class, 'getStates'])->name('get-states');
 Route::get('/get-cities/{state_id}', [CascadingDropDownListsDemoController::class, 'getCities'])->name('get-cities');
 
-Route::get('/single-delete', [DeleteSingleRowUsingRadioButtonController::class, 'index'])->name('singleDelete');
-Route::delete('/employees-delete', [DeleteSingleRowUsingRadioButtonController::class, 'destroy'])->name('employees.delete');
+Route::get('/single-delete', [DeletSingleRowUsingRadioButtonController::class, 'index'])->name('singleDelete');
+Route::delete('/employees-delete', [DeletSingleRowUsingRadioButtonController::class, 'destroy'])->name('employees.delete');
 
 Route::get('/bulk-delete', [DeleteBulkRowsUsingCheckBoxController::class, 'index'])->name('bulkemployees.index');
 Route::delete('/employees/bulk-delete', [DeleteBulkRowsUsingCheckBoxController::class, 'destroy'])->name('employees.bulkDelete');
@@ -92,7 +94,7 @@ Route::get('readsessiondata', [SessionsDemoController::class, 'readsessiondata']
 Route::get('cookiesdemo', [CookiesDemoController::class, 'index'])->name('cookiesdemo.index');
 Route::get('readcookiesdata', [CookiesDemoController::class, 'readcookiesdata'])->name('cookiesdemo.readcookiesdata');
 
-Route::get('cachedemo', [CacheDemoController::class, 'index'])->name('cachedemo.index');
+
 
 
 

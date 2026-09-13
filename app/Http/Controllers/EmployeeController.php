@@ -7,7 +7,7 @@ use App\Models\Employee;
 use App\Models\Department;
 use App\Models\Country;
 
-class EmployeeControler extends Controller
+class EmployeeController extends Controller
 {
     public function Index()
     {
