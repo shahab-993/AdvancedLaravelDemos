@@ -13,7 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
        $middleware->alias([
-        'IsSuperuser'=>\App\Http\Middleware\IsSuperuser::class
+        'IsSuperuser'=>\App\Http\Middleware\IsSuperuser::class,
+        'check.permission'=>\App\Http\Middleware\CheckPermissions::class,
        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

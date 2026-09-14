@@ -14,7 +14,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.roles.index') }}">Roles</a>
             </li>
-        @elseif (auth()->check() && auth()->user()->role_id > 2)
+        @elseif (auth()->check() && auth()->user()->role_id >= 2)
             <li class="nav-item">
 
                 <a class="nav-link" href="{{ route('employeesWithPermissions.index') }}">
