@@ -60,5 +60,6 @@ class EmployeeWithPermissionController extends Controller
          Employee::create($request->all());
          return redirect()->route('employeesWithPermissions.index')->with('success', 'Employee has been Created!');
       }
+   
 
     }
